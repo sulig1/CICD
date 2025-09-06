@@ -1,30 +1,17 @@
-# name: Solor workflow
+name: Solor workflow
 
 
-# on: [push]
+on: [push]
 
 
-# jobs: 
-#   practice-job: 
-#     runs-on: ubuntu-latest
-#     steps: 
-#     - name: Checkout code
-#       uses: actions/checkout@v4
-
-#     - name: Welcome message
-#       run: echo "This is my first solo workflow"
-
-name: CoderCo CICD workflow
-
-on:
-  push:
-
-jobs:
-  build:
+jobs: 
+  practice-job: 
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: We are testing this workflow
-        run: echo "Hello everyone"
+      - name: Welcome message
+        run: echo "This is my first solo workflow"
+
+
