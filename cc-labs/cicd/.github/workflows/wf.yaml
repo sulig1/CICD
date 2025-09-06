@@ -1,8 +1,8 @@
 name: Solor workflow
 
 
-on: 
-  push: 
+on: [push]
+
 
 
 jobs: 
