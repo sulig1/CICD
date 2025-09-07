@@ -16,7 +16,7 @@ jobs:
         run: echo "This is my first solo CI"
         
       - name: if condition validation
-        if: github.rf == 'refs/heads/main'
+        if: github.ref == 'refs/heads/main'
         run: echo "if condition is working"
 
 
