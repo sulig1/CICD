@@ -10,6 +10,7 @@ jobs:
       matrix:
         os: [windows-latest, macos-latest, ubuntu-latest]
         python: [3.9, 3.10]
+    fail-test: false
 
     steps: 
       - name: Checkout
