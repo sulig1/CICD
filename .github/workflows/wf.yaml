@@ -13,7 +13,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Welcome message
-        run: echo "branch is ${{ github.ref }}"
+        run: echo "This is my first solo CI"
         
+      - name: if condition validation
+        if: github.rf == 'refs/heads/main'
+        run: echo "if condition is working"
 
 
