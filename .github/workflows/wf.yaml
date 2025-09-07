@@ -1,7 +1,9 @@
 name: Matrix Example 
 
 on: 
-  push: 
+  push:
+    branches: 
+      - feature1 
 
 jobs: 
   test: 
