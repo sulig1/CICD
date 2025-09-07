@@ -1,22 +1,86 @@
-name: Solor workflow
+name: Matrix Example 
 
-
-on:
+on: 
   push: 
 
-
 jobs: 
-  practice-job: 
-    runs-on: ubuntu-latest
+  test: 
+    runs-on: ${{ matrix.os}}
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest, ubuntu-latest]
+        python: [3.9, 3.10]
+
     steps: 
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Welcome message
-        run: echo "This is my first solo CI"
+      - name: Set up python 
+        uses: actions/setup-python@v4
+        with: 
+          python-version: ${{ matrix.python}}
+
+      - name: run test
+        run: echo "we are testing OS:${{ matrix.os}}, with Python version:${{ matrix.python}} "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# name: Solor workflow
+
+
+# on:
+#   push: 
+
+
+# jobs: 
+#   practice-job: 
+#     runs-on: ubuntu-latest
+#     steps: 
+#       - name: Checkout code
+#         uses: actions/checkout@v4
+
+#       - name: Welcome message
+#         run: echo "This is my first solo CI"
         
-      - name: if condition validation
-        if: github.ref == 'refs/heads/main'
-        run: echo "if condition is working"
+#       - name: if condition validation
+#         if: github.ref == 'refs/heads/main'
+#         run: echo "if condition is working"
 
 
