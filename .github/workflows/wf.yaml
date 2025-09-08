@@ -1,30 +1,23 @@
-name: Matrix Example 
+name: secrtes practice
 
 on: 
   push:
-    branches: 
-      - feature1 
+    branches:
+      - 'feature1'
 
-jobs: 
-  test: 
-    runs-on: ${{ matrix.os}}
-    strategy:
-      matrix:
-        os: [windows-latest, macos-latest, ubuntu-latest]
-        python: [3.9, 3.10]
-      fail-fast: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-    steps: 
-      - name: Checkout
+    steps:
+      - name: checkout code
         uses: actions/checkout@v4
 
-      - name: Set up python 
-        uses: actions/setup-python@v4
-        with: 
-          python-version: ${{ matrix.python}}
+      - name: secret check 
+        run: echo "my secret code is ${{ secret.CODERCOSECRETS}}"
 
-      - name: run test
-        run: echo "we are testing OS:${{ matrix.os}}, with Python version:${{ matrix.python}} "
+
+
 
 
 
